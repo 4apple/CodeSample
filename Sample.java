@@ -11,3 +11,8 @@
         getWindow().getDecorView().setSystemUiVisibility(vis);
     }
 
+
+/**
+* get method name
+*/
+String name = new Object(){}.getClass().getEnclosingMethod().getName();
