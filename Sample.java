@@ -28,3 +28,12 @@ handler.postDelayed(new Runnable() {
         buttons[inew][jnew].setBackgroundColor(Color.BLACK);
     }
 }, 5000);
+
+
+/*
+* print duration time for show a activity
+* adb logcat | grep "Displayed"
+11-02 10:36:11.557 1272-1334/? I/ActivityManager: Displayed com.xxx.gallery/.view.album.AlbumDetailActivity: +291ms
+11-02 10:36:21.613 1272-1334/? I/ActivityManager: Displayed com.xxx.gallery/.view.album.AlbumDetailActivity: +457ms
+*
+*/
