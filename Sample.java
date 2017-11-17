@@ -1,4 +1,34 @@
 /**
+@2017-11-17
+How to disable scrolling of AppBarLayout in CoordinatorLayout?
+https://stackoverflow.com/questions/34108501/how-to-disable-scrolling-of-appbarlayout-in-coordinatorlayout
+Problem
+
+    AppBarLayout scrolls even if the scroll content fits the screen.
+    It is because by default we can drag AppBarLayout by touching & dragging AppBarLayout.
+
+Solution
+
+    We will disable "Dragging" behaviour for AppBarLayout.
+*/
+// Disable "Drag" for AppBarLayout (i.e. User can't scroll appBarLayout by directly touching appBarLayout - User can only scroll appBarLayout by only using scrollContent)
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    //Activity.onCreate()
+    if (appBarLayout.getLayoutParams() != null) {
+        CoordinatorLayout.LayoutParams layoutParams = (CoordinatorLayout.LayoutParams) appBarLayout.getLayoutParams();
+        AppBarLayout.Behavior appBarLayoutBehaviour = new AppBarLayout.Behavior();
+        appBarLayoutBehaviour.setDragCallback(new AppBarLayout.Behavior.DragCallback() {
+            @Override
+            public boolean canDrag(@NonNull AppBarLayout appBarLayout) {
+                return false;
+            }
+        });
+        layoutParams.setBehavior(appBarLayoutBehaviour);
+    }
+}
+
+/**
 *change status bar background style 
 */
  private void setLightStatusBar(boolean lightStatusBar) {
