@@ -1,4 +1,24 @@
 /**
+*   Debug Code，only print when enable value changed
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    static int status = 0;
+
+    public void enableScroll(Boolean enable) {
+        int curr = enable?1:-1;
+        if (status == 0 || curr != status) {
+            Log.d(TAG,"enableScroll:" + enable);
+            Log.d(TAG,Log.getStackTraceString(new Throwable()));
+        }
+        mViewPager.enableScroll(enable);
+    }
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+
+
+
+
+/**
 @2017-11-17
 How to disable scrolling of AppBarLayout in CoordinatorLayout?
 https://stackoverflow.com/questions/34108501/how-to-disable-scrolling-of-appbarlayout-in-coordinatorlayout
