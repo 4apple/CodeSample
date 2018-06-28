@@ -1,4 +1,9 @@
 /**
+* find apk location in phone by adb shell
+* adb shell pm list packages -f | grep "com.XXX.gallery3d"
+**/
+
+/**
 *   Debug Code，only print when enable value changed
 
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
