@@ -1,4 +1,23 @@
 /**
+**2018-7-4
+**Use runOnUiThread() method to execute the UI action from a Non-UI thread.
+**/
+private class ReceiverThread extends Thread {
+@Override
+public void run() { 
+Activity_name.this.runOnUiThread(new Runnable() {
+
+        @Override
+        public void run() {
+             mAdapter.notifyDataSetChanged();
+        }
+    });
+}
+
+
+
+
+/**
 * find apk location in phone by adb shell
 * adb shell pm list packages -f | grep "com.XXX.gallery3d"
 **/
